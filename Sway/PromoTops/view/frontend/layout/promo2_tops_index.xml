@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <!--content é o principal do meio-->
+        <referenceContainer name="content">
+            <!--Minha classe php meu arquivo de template phtml e o nome disso tudo junto-->
+            <block class="Sway\PromoTops\Block\TesteBlock" template="Sway_PromoTops::teste.phtml" name="promotops.content"/>
+        </referenceContainer>
+    </body>
+</page>
