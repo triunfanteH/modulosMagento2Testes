@@ -1,0 +1,24 @@
+composer require vpietri/adm-quickdevbar   <-debug
+composer remove vpietri/adm-quickdevbar
+
+
+Ainda n funciona na 2.3.4
+https://github.com/magespecialist/mage-chrome-toolbar          <-usado para debugar
+
+Opções de usuario
+https://github.com/netz98/n98-magerun2
+
+
+Gerador de módulo
+https://mage2gen.com/
+
+
+
+
+desativando altuns caches
+php bin/magento cache:disable full_page
+php bin/magento cache:disable layout
+php bin/magento cache:disable block_html
+php bin/magento cache:disable collections
+php bin/magento cache:disable google_product
+

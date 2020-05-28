@@ -1,0 +1,102 @@
+bin/magento indexer:reindex;
+php bin/magento setup:di:compile;
+php bin/magento setup:upgrade;
+php bin/magento setup:static-content:deploy en_US pt_BR -f;
+php bin/magento cache:clean;
+php bin/magento cache:flush;
+
+
+---apt-get install nodejs
+---composer require --dev mage2tv/magento-cache-clean
+
+
+vendor/bin/cache-clean.js config full_page
+vendor/bin/cache-clean.js --watch
+
+
+
+
+loja/swagger                            api
+
+bin/magento cron:install                cron
+bin/magento cron:remove                 cron
+
+BACKUP
+-PARA RODAR O BANCO
+php bin/magento config:set system/backup/functionality_enabled 1
+
+--lista os arquivos de bkp
+php bin/magento info:backup:list
+
+--VOLTAR BKP
+php bin/magento setup:rollback -m 1580336579_filesystem_media.tgz
+php bin/magento setup:rollback -d 1580337590_db.sql
+php bin/magento setup:rollback -c 1580336852_filesystem_code.tgz
+
+
+--OPÇÕES BKP
+php bin/magento setup:backup -h
+
+exemplo:
+php bin/magento setup:backup --media
+php bin/magento setup:backup --code
+php bin/magento setup:backup --db
+
+
+
+php bin/magento deploy:mode:set developer     -> aciona o modo desenvolvedor
+
+php bin/magento dev:template-hints:enable -> dicas
+
+php bin/magento cache:disable   -> desabilita o cache
+
+
+
+php bin/magento cache:enable config;
+php bin/magento cache:enable layout;
+php bin/magento cache:enable collections;
+php bin/magento cache:enable reflection;
+php bin/magento cache:enable db_ddl;
+php bin/magento cache:enable compiled_config;
+php bin/magento cache:enable eav;
+php bin/magento cache:enable customer_notification;
+php bin/magento cache:enable config_integration;
+php bin/magento cache:enable config_integration_api;
+php bin/magento cache:enable google_product;
+php bin/magento cache:enable config_webservice;
+php bin/magento cache:enable translate;
+php bin/magento cache:enable vertex
+
+
+
+VV set URL padrão
+php bin/magento setup:store-config:set --base-url=http://192.168.0.188/loja2
+php bin/magento setup:store-config:set --base-url-secure=https://192.168.0.188/loja2
+
+Criar admin user
+php bin/magento admin:user:create --admin-user="admin2" --admin-password="admin712" --admin-email="admin@example.com" --admin-firstname="Admin" --admin-lastname="Admin"
+
+
+https://www.mageplaza.com/devdocs/how-install-magento-2-ubuntu.html
+
+composer create-project --repository=https://repo.magento.com/ magento/project-community-edition:2.3.4 loja
+
+bin/magento setup:install --backend-frontname=admin --db-name=magento2curso --db-user=magento2curso --db-password=magento2curso --db-host=localhost:3306 --admin-user=magenteiro --admin-password=aluno123 --admin-email="aluno@magenteiro.com" --admin-firstname=Aluno --admin-lastname=Magenteiro --currency=BRL --session-save=files
+
+
+
+
+
+Se der pau...
+
+https://magento.stackexchange.com/questions/252188/magento-2-2-7-admin-panel-blank-page
+https://magento.stackexchange.com/questions/91087/magento-2-admin-url-not-working-and-loaded-frontend-is-all-messy
+
+chmod 777 ./app/etc;
+chmod 644 ./app/etc/*.xml;
+find . -type f -exec chmod 644 {} \;
+find . -type d -exec chmod 755 {} \;
+find ./var -type d -exec chmod 777 {} \;
+find ./pub/media -type d -exec chmod 777 {} \;
+find ./pub/static -type d -exec chmod 777 {} \;
+
