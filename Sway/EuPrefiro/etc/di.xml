@@ -1,4 +1,0 @@
-<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
-    <preference for="Sway\Teste\Console\Command\HelloWorld" type="Sway\EuPrefiro\Models\HelloLittlePlanet"/>
-
-</config>

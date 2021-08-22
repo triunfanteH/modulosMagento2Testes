@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
-    <menu>
-        <add id="Sway_AdminController::menu" title="Sway Options" module="Sway_AdminController" resource="Sway_AdminController::menu" sortOrder="10"/>
-        <add id="Sway_AdminController::item" title="Sway Item" module="Sway_AdminController" resource="Sway_AdminController::item" sortOrder="20" action="Swayadmin/item" parent="Sway_AdminController::menu"/>
-        <add id="Sway_AdminController::itemDois" title="Sway Item Dois" module="Sway_AdminController" resource="Sway_AdminController::itemDois" sortOrder="21" action="Swayadmin/item" parent="Sway_AdminController::menu"/>
-    </menu>
-</config>

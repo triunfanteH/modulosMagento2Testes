@@ -1,9 +1,0 @@
-<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
-    <type name="Magento\Framework\Console\CommandListInterface">
-        <arguments>
-            <argument name="commands" xsi:type="array">
-                <item name="comandoTeste" xsi:type="object">Sway\Teste\Console\Command\HelloWorld</item>
-            </argument>
-        </arguments>
-    </type>
-</config>
