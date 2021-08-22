@@ -1,10 +1,6 @@
 composer require vpietri/adm-quickdevbar   <-debug
 composer remove vpietri/adm-quickdevbar
 
-
-Ainda n funciona na 2.3.4
-https://github.com/magespecialist/mage-chrome-toolbar          <-usado para debugar
-
 Opções de usuario
 https://github.com/netz98/n98-magerun2
 
